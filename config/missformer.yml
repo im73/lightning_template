@@ -1,0 +1,34 @@
+data_config:
+  data_path: './data/ETT/ETTh1.csv'
+  mode: 'train' #['train', 'test', 'val']
+  seq_len: 96
+  label_len: 24
+  pred_len: 48
+  features: 'S' #['M', 'S', 'MS']
+  freq: 'h'
+  timeenc:
+  target: 'OT'
+  scale: True
+  mask_percentage: 0.5
+
+training_config:
+  gpu: True
+  ngpus: 1
+  mode: "train" #["train, test, prdict"]
+  save_path: ""
+
+model_config:
+  enc_in: 1
+  dec_in: 1
+  c_out: 1
+  d_model: 512
+  n_heads: 8
+  e_layers: 2
+  d_layers: 1
+  d_ff: 2048
+  dropout: 0.05
+  embed: 'timeF'
+  freq: 'h'
+  pred_len: 48
+  label_len: 24
+  lr: 0.0001

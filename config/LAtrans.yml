@@ -1,0 +1,39 @@
+model_config:
+  window_size: 400
+  d_model: 512
+  dim: 1
+  moving_avg: 24
+  local_length: 24
+  min_len: 1
+  d_ff: 2048
+  activation: "gelu"
+  layers: 3
+  factor: 1
+  n_heads: 8
+  optimizer_config:
+    lr: 0.00001
+
+data_config:
+  root_path: "/home/LAB/zhuqs/prj/torch_lightning_template/5s_data"
+  label_path: "5s.json"
+  seed: 2023
+
+feature_config:
+  mel_config:
+    sample_rate: 16000
+    n_fft: 1024
+    hop_length: 320
+    win_length: 1024
+    f_min: 50.0
+    f_max: 14000.0
+    n_mels: 64
+  kernel_size: 200
+  type: "time"
+
+pred_config:
+  threshold: 0.0000005
+
+
+
+
+  

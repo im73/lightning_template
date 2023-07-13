@@ -1,0 +1,40 @@
+feature_config: 
+  sample_rate: 16000
+  n_fft: 1024
+  hop_length: 320
+  win_length: 1024
+  f_min: 50.0
+  f_max: 14000.0
+  n_mels: 64
+  kernel_size: 400
+  type: "time"
+
+model_config:
+  factor: 10 
+  d_model: 256
+  d_ff: 512
+  n_heads: 4 
+  e_layers: 3 
+  dropout: 0.0
+  in_len: 80000
+  seg_len: 4
+  win_size: 2
+  threshold: 0.1
+  weight_loss: 100
+  optimizer_config:
+    lr: 0.001
+    # weight_decay: 0.0
+    # betas: [0.9, 0.98]
+    # eps: 1e-9
+    # warmup_steps: 4000
+    # max_norm: 5.0
+    # lr_scheduler_config:
+    #   name: "CosineAnnealingLR"
+    #   T_max: 100
+    #   eta_min: 0.0
+    #   last_epoch: -1
+
+data_config:
+  root_path: "/home/LAB/zhuqs/prj/torch_lightning_template/5s_data"
+  label_path: "5s.json"
+  seed: 2023

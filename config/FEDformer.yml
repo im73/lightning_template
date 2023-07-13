@@ -1,0 +1,43 @@
+model_config:
+  version: "Wavelets"
+  mode_select: "low"
+  modes: 64
+  output_attention: False
+  seq_len: 251
+  label_len: 0
+  pred_len: 200
+  moving_avg: 10
+  d_model: 512
+  L: 3
+  base: "legendre"
+  e_layers: 2
+  d_layers: 1
+  activation: "gelu"
+  cross_activation: "tanh"
+  dropout: 0.05
+  d_ff: 2048
+  enc_in: 64
+  dec_in: 64
+  c_out: 1
+  n_heads: 8
+  weight_loss: 80
+  threshold: 0.6
+  optimizer_config:
+    lr: 0.001
+
+data_config:
+  root_path: "/home/LAB/zhuqs/prj/torch_lightning_template/5s_data"
+  label_path: "5s.json"
+  seed: 2023
+
+feature_config:
+  mel_config:
+    sample_rate: 16000
+    n_fft: 1024
+    hop_length: 320
+    win_length: 1024
+    f_min: 50.0
+    f_max: 14000.0
+    n_mels: 64
+  kernel_size: 400
+  type: "mel"
